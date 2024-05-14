@@ -1,0 +1,26 @@
+#!/bin/bash
+
+echo -e "Star Micronics"
+echo -e "libstario uninstaller"
+echo -e "---------------------"
+echo -e ""
+echo -e "uninstalling:"
+echo -e "\t/usr/lib/libstario.so* (all versions & links)"
+echo -e "\t/usr/include/stario/ (all contents)"
+echo -e ""
+echo -e ""
+echo -e "support contact:"
+echo -e "\talbert kennis - albert@star-m.jp"
+echo -e ""
+echo -e "now uninstalling..."
+
+if [ -z $DESTDIR ] && [ "$UID" -ne "0" ]; then echo "Must be root user to install"; exit 1; fi
+
+rm -f $DESTDIR/usr/lib/libstario.so*
+ldconfig
+rm -rf $DESTDIR/usr/include/stario
+
+echo ""
+echo "uninstallation completed successfully :)"
+echo ""
+

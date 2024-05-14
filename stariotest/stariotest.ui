@@ -1,0 +1,1315 @@
+<!DOCTYPE UI><UI version="3.1" stdsetdef="1">
+<class>StarIOTest</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>StarIOTest</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>559</width>
+            <height>657</height>
+        </rect>
+    </property>
+    <property name="sizePolicy">
+        <sizepolicy>
+            <hsizetype>5</hsizetype>
+            <vsizetype>5</vsizetype>
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+        </sizepolicy>
+    </property>
+    <property name="caption">
+        <string>StarIOTest</string>
+    </property>
+    <widget class="QGroupBox">
+        <property name="name">
+            <cstring>groupBox1</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>20</x>
+                <y>0</y>
+                <width>520</width>
+                <height>90</height>
+            </rect>
+        </property>
+        <property name="paletteBackgroundColor">
+            <color>
+                <red>230</red>
+                <green>231</green>
+                <blue>230</blue>
+            </color>
+        </property>
+        <property name="title">
+            <string>Port</string>
+        </property>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>textLabel2_4</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>130</x>
+                    <y>20</y>
+                    <width>70</width>
+                    <height>30</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>PortName</string>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>textLabel2_2_3</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>130</x>
+                    <y>50</y>
+                    <width>70</width>
+                    <height>30</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>PortSettings</string>
+            </property>
+        </widget>
+        <widget class="QPushButton">
+            <property name="name">
+                <cstring>pushButton_OpenPort</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>20</y>
+                    <width>110</width>
+                    <height>30</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Open Port</string>
+            </property>
+        </widget>
+        <widget class="QTextEdit">
+            <property name="name">
+                <cstring>textEdit_PortName</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>210</x>
+                    <y>20</y>
+                    <width>300</width>
+                    <height>30</height>
+                </rect>
+            </property>
+            <property name="vScrollBarMode">
+                <enum>AlwaysOff</enum>
+            </property>
+            <property name="hScrollBarMode">
+                <enum>AlwaysOff</enum>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>for serial dev try: /dev/ttyS0, for parallel dev try: /dev/parport0, for usb dev try: usb:TSP700</string>
+            </property>
+        </widget>
+        <widget class="QTextEdit">
+            <property name="name">
+                <cstring>textEdit_PortSettings</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>210</x>
+                    <y>50</y>
+                    <width>300</width>
+                    <height>30</height>
+                </rect>
+            </property>
+            <property name="vScrollBarMode">
+                <enum>AlwaysOff</enum>
+            </property>
+            <property name="hScrollBarMode">
+                <enum>AlwaysOff</enum>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>for serial dev, enter 38400,none,8,1,hdwr (baud, parity, data-bits, stop-bits, flow-ctrl)</string>
+            </property>
+        </widget>
+    </widget>
+    <widget class="QTabWidget">
+        <property name="name">
+            <cstring>tabWidget2</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>10</x>
+                <y>100</y>
+                <width>540</width>
+                <height>550</height>
+            </rect>
+        </property>
+        <property name="sizePolicy">
+            <sizepolicy>
+                <hsizetype>7</hsizetype>
+                <vsizetype>7</vsizetype>
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+            </sizepolicy>
+        </property>
+        <widget class="QWidget">
+            <property name="name">
+                <cstring>tab</cstring>
+            </property>
+            <attribute name="title">
+                <string>Printer</string>
+            </attribute>
+            <widget class="QGroupBox">
+                <property name="name">
+                    <cstring>groupBox4</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>10</x>
+                        <y>90</y>
+                        <width>520</width>
+                        <height>360</height>
+                    </rect>
+                </property>
+                <property name="paletteBackgroundColor">
+                    <color>
+                        <red>230</red>
+                        <green>231</green>
+                        <blue>230</blue>
+                    </color>
+                </property>
+                <property name="title">
+                    <string>Input</string>
+                </property>
+                <widget class="QGroupBox">
+                    <property name="name">
+                        <cstring>groupBox5</cstring>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>10</x>
+                            <y>50</y>
+                            <width>160</width>
+                            <height>100</height>
+                        </rect>
+                    </property>
+                    <property name="paletteBackgroundColor">
+                        <color>
+                            <red>230</red>
+                            <green>231</green>
+                            <blue>230</blue>
+                        </color>
+                    </property>
+                    <property name="title">
+                        <string>Printer Status 1</string>
+                    </property>
+                    <widget class="QCheckBox">
+                        <property name="name">
+                            <cstring>checkBox_Status_CoverOpen</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>10</x>
+                                <y>40</y>
+                                <width>130</width>
+                                <height>16</height>
+                            </rect>
+                        </property>
+                        <property name="font">
+                            <font>
+                                <pointsize>8</pointsize>
+                            </font>
+                        </property>
+                        <property name="text">
+                            <string>Cover Open</string>
+                        </property>
+                    </widget>
+                    <widget class="QCheckBox">
+                        <property name="name">
+                            <cstring>checkBox_Status_CompulsionSwitch</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>10</x>
+                                <y>60</y>
+                                <width>130</width>
+                                <height>16</height>
+                            </rect>
+                        </property>
+                        <property name="font">
+                            <font>
+                                <pointsize>8</pointsize>
+                            </font>
+                        </property>
+                        <property name="text">
+                            <string>Compulsion Switch</string>
+                        </property>
+                    </widget>
+                    <widget class="QCheckBox">
+                        <property name="name">
+                            <cstring>checkBox_Status_Offline</cstring>
+                        </property>
+                        <property name="enabled">
+                            <bool>true</bool>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>10</x>
+                                <y>20</y>
+                                <width>130</width>
+                                <height>16</height>
+                            </rect>
+                        </property>
+                        <property name="font">
+                            <font>
+                                <pointsize>8</pointsize>
+                            </font>
+                        </property>
+                        <property name="text">
+                            <string>Offline</string>
+                        </property>
+                    </widget>
+                </widget>
+                <widget class="QGroupBox">
+                    <property name="name">
+                        <cstring>groupBox5_2</cstring>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>180</x>
+                            <y>50</y>
+                            <width>160</width>
+                            <height>100</height>
+                        </rect>
+                    </property>
+                    <property name="paletteBackgroundColor">
+                        <color>
+                            <red>230</red>
+                            <green>231</green>
+                            <blue>230</blue>
+                        </color>
+                    </property>
+                    <property name="title">
+                        <string>Printer Status 2</string>
+                    </property>
+                    <widget class="QCheckBox">
+                        <property name="name">
+                            <cstring>checkBox_Status_OverTemp</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>10</x>
+                                <y>20</y>
+                                <width>130</width>
+                                <height>16</height>
+                            </rect>
+                        </property>
+                        <property name="font">
+                            <font>
+                                <pointsize>8</pointsize>
+                            </font>
+                        </property>
+                        <property name="text">
+                            <string>Over Temp</string>
+                        </property>
+                    </widget>
+                    <widget class="QCheckBox">
+                        <property name="name">
+                            <cstring>checkBox_Status_UnrecoverableError</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>10</x>
+                                <y>40</y>
+                                <width>130</width>
+                                <height>16</height>
+                            </rect>
+                        </property>
+                        <property name="font">
+                            <font>
+                                <pointsize>8</pointsize>
+                            </font>
+                        </property>
+                        <property name="text">
+                            <string>Unrecoverable Error</string>
+                        </property>
+                    </widget>
+                    <widget class="QCheckBox">
+                        <property name="name">
+                            <cstring>checkBox_Status_CutterError</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>10</x>
+                                <y>60</y>
+                                <width>130</width>
+                                <height>16</height>
+                            </rect>
+                        </property>
+                        <property name="font">
+                            <font>
+                                <pointsize>8</pointsize>
+                            </font>
+                        </property>
+                        <property name="text">
+                            <string>Cutter Error</string>
+                        </property>
+                    </widget>
+                    <widget class="QCheckBox">
+                        <property name="name">
+                            <cstring>checkBox_Status_MechError</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>10</x>
+                                <y>80</y>
+                                <width>130</width>
+                                <height>16</height>
+                            </rect>
+                        </property>
+                        <property name="font">
+                            <font>
+                                <pointsize>8</pointsize>
+                            </font>
+                        </property>
+                        <property name="text">
+                            <string>Mech Error</string>
+                        </property>
+                    </widget>
+                </widget>
+                <widget class="QGroupBox">
+                    <property name="name">
+                        <cstring>groupBox5_2_2_2</cstring>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>10</x>
+                            <y>150</y>
+                            <width>160</width>
+                            <height>100</height>
+                        </rect>
+                    </property>
+                    <property name="paletteBackgroundColor">
+                        <color>
+                            <red>230</red>
+                            <green>231</green>
+                            <blue>230</blue>
+                        </color>
+                    </property>
+                    <property name="title">
+                        <string>Printer Status 4</string>
+                    </property>
+                    <widget class="QCheckBox">
+                        <property name="name">
+                            <cstring>checkBox_Status_PaperEmpty</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>10</x>
+                                <y>40</y>
+                                <width>130</width>
+                                <height>16</height>
+                            </rect>
+                        </property>
+                        <property name="font">
+                            <font>
+                                <pointsize>8</pointsize>
+                            </font>
+                        </property>
+                        <property name="text">
+                            <string>Paper Empty</string>
+                        </property>
+                    </widget>
+                    <widget class="QCheckBox">
+                        <property name="name">
+                            <cstring>checkBox_Status_PaperNearEmptyInner</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>10</x>
+                                <y>60</y>
+                                <width>140</width>
+                                <height>16</height>
+                            </rect>
+                        </property>
+                        <property name="font">
+                            <font>
+                                <pointsize>8</pointsize>
+                            </font>
+                        </property>
+                        <property name="text">
+                            <string>Paper Near Empty Inner</string>
+                        </property>
+                    </widget>
+                    <widget class="QCheckBox">
+                        <property name="name">
+                            <cstring>checkBox_Status_PaperNearEmptyOuter</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>10</x>
+                                <y>80</y>
+                                <width>140</width>
+                                <height>16</height>
+                            </rect>
+                        </property>
+                        <property name="font">
+                            <font>
+                                <pointsize>8</pointsize>
+                            </font>
+                        </property>
+                        <property name="text">
+                            <string>Paper Near Empty Outer</string>
+                        </property>
+                    </widget>
+                    <widget class="QCheckBox">
+                        <property name="name">
+                            <cstring>checkBox_Status_BlackMarkDetectStatus</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>10</x>
+                                <y>20</y>
+                                <width>130</width>
+                                <height>16</height>
+                            </rect>
+                        </property>
+                        <property name="font">
+                            <font>
+                                <pointsize>8</pointsize>
+                            </font>
+                        </property>
+                        <property name="text">
+                            <string>Black Mark Detect</string>
+                        </property>
+                    </widget>
+                </widget>
+                <widget class="QGroupBox">
+                    <property name="name">
+                        <cstring>groupBox5_2_2_2_2_2_2</cstring>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>10</x>
+                            <y>250</y>
+                            <width>160</width>
+                            <height>100</height>
+                        </rect>
+                    </property>
+                    <property name="paletteBackgroundColor">
+                        <color>
+                            <red>230</red>
+                            <green>231</green>
+                            <blue>230</blue>
+                        </color>
+                    </property>
+                    <property name="title">
+                        <string>Printer Status 7</string>
+                    </property>
+                    <widget class="QLabel">
+                        <property name="name">
+                            <cstring>textLabel3_3</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>10</x>
+                                <y>20</y>
+                                <width>140</width>
+                                <height>16</height>
+                            </rect>
+                        </property>
+                        <property name="font">
+                            <font>
+                                <pointsize>8</pointsize>
+                            </font>
+                        </property>
+                        <property name="text">
+                            <string>Presenter State</string>
+                        </property>
+                    </widget>
+                    <widget class="QLabel">
+                        <property name="name">
+                            <cstring>textLabel_Status_PresenterState</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>10</x>
+                                <y>50</y>
+                                <width>140</width>
+                                <height>16</height>
+                            </rect>
+                        </property>
+                        <property name="font">
+                            <font>
+                                <pointsize>8</pointsize>
+                            </font>
+                        </property>
+                        <property name="frameShape">
+                            <enum>Box</enum>
+                        </property>
+                        <property name="frameShadow">
+                            <enum>Sunken</enum>
+                        </property>
+                        <property name="text">
+                            <string>dynamic</string>
+                        </property>
+                    </widget>
+                </widget>
+                <widget class="QGroupBox">
+                    <property name="name">
+                        <cstring>groupBox5_2_2_2_2</cstring>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>180</x>
+                            <y>150</y>
+                            <width>160</width>
+                            <height>100</height>
+                        </rect>
+                    </property>
+                    <property name="paletteBackgroundColor">
+                        <color>
+                            <red>230</red>
+                            <green>231</green>
+                            <blue>230</blue>
+                        </color>
+                    </property>
+                    <property name="title">
+                        <string>Printer Status 5</string>
+                    </property>
+                    <widget class="QCheckBox">
+                        <property name="name">
+                            <cstring>checkBox_Status_StackerFull</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>10</x>
+                                <y>20</y>
+                                <width>130</width>
+                                <height>16</height>
+                            </rect>
+                        </property>
+                        <property name="font">
+                            <font>
+                                <pointsize>8</pointsize>
+                            </font>
+                        </property>
+                        <property name="text">
+                            <string>Stacker Full</string>
+                        </property>
+                    </widget>
+                </widget>
+                <widget class="QGroupBox">
+                    <property name="name">
+                        <cstring>groupBox5_2_2</cstring>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>350</x>
+                            <y>50</y>
+                            <width>160</width>
+                            <height>100</height>
+                        </rect>
+                    </property>
+                    <property name="paletteBackgroundColor">
+                        <color>
+                            <red>230</red>
+                            <green>231</green>
+                            <blue>230</blue>
+                        </color>
+                    </property>
+                    <property name="title">
+                        <string>Printer Status 3</string>
+                    </property>
+                    <widget class="QCheckBox">
+                        <property name="name">
+                            <cstring>checkBox_Status_PageModeCmdError</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>10</x>
+                                <y>20</y>
+                                <width>130</width>
+                                <height>16</height>
+                            </rect>
+                        </property>
+                        <property name="font">
+                            <font>
+                                <pointsize>8</pointsize>
+                            </font>
+                        </property>
+                        <property name="text">
+                            <string>Page Mode Cmd Error</string>
+                        </property>
+                    </widget>
+                    <widget class="QCheckBox">
+                        <property name="name">
+                            <cstring>checkBox_Status_PaperSizeError</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>10</x>
+                                <y>40</y>
+                                <width>130</width>
+                                <height>16</height>
+                            </rect>
+                        </property>
+                        <property name="font">
+                            <font>
+                                <pointsize>8</pointsize>
+                            </font>
+                        </property>
+                        <property name="text">
+                            <string>Paper Size Error</string>
+                        </property>
+                    </widget>
+                    <widget class="QCheckBox">
+                        <property name="name">
+                            <cstring>checkBox_Status_HeadUpError</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>10</x>
+                                <y>80</y>
+                                <width>130</width>
+                                <height>16</height>
+                            </rect>
+                        </property>
+                        <property name="font">
+                            <font>
+                                <pointsize>8</pointsize>
+                            </font>
+                        </property>
+                        <property name="text">
+                            <string>Head Up Error</string>
+                        </property>
+                    </widget>
+                    <widget class="QCheckBox">
+                        <property name="name">
+                            <cstring>checkBox_Status_PresenterPaperJamError</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>10</x>
+                                <y>60</y>
+                                <width>130</width>
+                                <height>16</height>
+                            </rect>
+                        </property>
+                        <property name="font">
+                            <font>
+                                <pointsize>8</pointsize>
+                            </font>
+                        </property>
+                        <property name="text">
+                            <string>Presenter Paper Jam</string>
+                        </property>
+                    </widget>
+                </widget>
+                <widget class="QGroupBox">
+                    <property name="name">
+                        <cstring>groupBox5_2_2_2_2_2</cstring>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>350</x>
+                            <y>150</y>
+                            <width>160</width>
+                            <height>100</height>
+                        </rect>
+                    </property>
+                    <property name="paletteBackgroundColor">
+                        <color>
+                            <red>230</red>
+                            <green>231</green>
+                            <blue>230</blue>
+                        </color>
+                    </property>
+                    <property name="title">
+                        <string>Printer Status 6</string>
+                    </property>
+                    <widget class="QCheckBox">
+                        <property name="name">
+                            <cstring>checkBox_Status_ETBAvailable</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>10</x>
+                                <y>20</y>
+                                <width>130</width>
+                                <height>16</height>
+                            </rect>
+                        </property>
+                        <property name="font">
+                            <font>
+                                <pointsize>8</pointsize>
+                            </font>
+                        </property>
+                        <property name="text">
+                            <string>ETB Available</string>
+                        </property>
+                    </widget>
+                    <widget class="QLabel">
+                        <property name="name">
+                            <cstring>textLabel3</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>10</x>
+                                <y>40</y>
+                                <width>130</width>
+                                <height>16</height>
+                            </rect>
+                        </property>
+                        <property name="font">
+                            <font>
+                                <pointsize>8</pointsize>
+                            </font>
+                        </property>
+                        <property name="text">
+                            <string>ETB Counter</string>
+                        </property>
+                    </widget>
+                    <widget class="QLabel">
+                        <property name="name">
+                            <cstring>textLabel_Status_ETBCounter</cstring>
+                        </property>
+                        <property name="geometry">
+                            <rect>
+                                <x>10</x>
+                                <y>70</y>
+                                <width>130</width>
+                                <height>16</height>
+                            </rect>
+                        </property>
+                        <property name="font">
+                            <font>
+                                <pointsize>8</pointsize>
+                            </font>
+                        </property>
+                        <property name="frameShape">
+                            <enum>Box</enum>
+                        </property>
+                        <property name="frameShadow">
+                            <enum>Sunken</enum>
+                        </property>
+                        <property name="text">
+                            <string>dynamic</string>
+                        </property>
+                    </widget>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>pushButton_GetStatus</cstring>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>10</x>
+                            <y>20</y>
+                            <width>110</width>
+                            <height>30</height>
+                        </rect>
+                    </property>
+                    <property name="text">
+                        <string>Get Status</string>
+                    </property>
+                </widget>
+            </widget>
+            <widget class="QGroupBox">
+                <property name="name">
+                    <cstring>groupBox2</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>10</x>
+                        <y>0</y>
+                        <width>520</width>
+                        <height>90</height>
+                    </rect>
+                </property>
+                <property name="paletteBackgroundColor">
+                    <color>
+                        <red>230</red>
+                        <green>231</green>
+                        <blue>230</blue>
+                    </color>
+                </property>
+                <property name="title">
+                    <string>Output</string>
+                </property>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>pushButton_WritePort</cstring>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>10</x>
+                            <y>19</y>
+                            <width>111</width>
+                            <height>31</height>
+                        </rect>
+                    </property>
+                    <property name="text">
+                        <string>Write Port</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>pushButton_PrintImage</cstring>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>10</x>
+                            <y>50</y>
+                            <width>111</width>
+                            <height>30</height>
+                        </rect>
+                    </property>
+                    <property name="text">
+                        <string>Print Image</string>
+                    </property>
+                </widget>
+                <widget class="QCheckBox">
+                    <property name="name">
+                        <cstring>checkBox_DoBlockChecking</cstring>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>130</x>
+                            <y>20</y>
+                            <width>380</width>
+                            <height>30</height>
+                        </rect>
+                    </property>
+                    <property name="text">
+                        <string>Do Block Checking</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>pushButton_BrowseImageFile</cstring>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>420</x>
+                            <y>50</y>
+                            <width>91</width>
+                            <height>31</height>
+                        </rect>
+                    </property>
+                    <property name="text">
+                        <string>Browse</string>
+                    </property>
+                </widget>
+                <widget class="QTextEdit">
+                    <property name="name">
+                        <cstring>textEdit_ImageFile</cstring>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>130</x>
+                            <y>50</y>
+                            <width>280</width>
+                            <height>30</height>
+                        </rect>
+                    </property>
+                    <property name="vScrollBarMode">
+                        <enum>AlwaysOff</enum>
+                    </property>
+                    <property name="hScrollBarMode">
+                        <enum>AlwaysOff</enum>
+                    </property>
+                </widget>
+            </widget>
+            <widget class="QGroupBox">
+                <property name="name">
+                    <cstring>groupBox13</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>10</x>
+                        <y>450</y>
+                        <width>521</width>
+                        <height>60</height>
+                    </rect>
+                </property>
+                <property name="paletteBackgroundColor">
+                    <color>
+                        <red>230</red>
+                        <green>231</green>
+                        <blue>230</blue>
+                    </color>
+                </property>
+                <property name="title">
+                    <string>Control</string>
+                </property>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>pushButton_HdwrReset</cstring>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>8</x>
+                            <y>24</y>
+                            <width>110</width>
+                            <height>30</height>
+                        </rect>
+                    </property>
+                    <property name="text">
+                        <string>Hardware Reset</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>pushButton_ReadROMVer</cstring>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>128</x>
+                            <y>24</y>
+                            <width>110</width>
+                            <height>30</height>
+                        </rect>
+                    </property>
+                    <property name="text">
+                        <string>Read ROM Ver.</string>
+                    </property>
+                </widget>
+            </widget>
+        </widget>
+        <widget class="QWidget">
+            <property name="name">
+                <cstring>tab</cstring>
+            </property>
+            <attribute name="title">
+                <string>Card Reader / Writer</string>
+            </attribute>
+            <widget class="QGroupBox">
+                <property name="name">
+                    <cstring>groupBox14</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>8</x>
+                        <y>4</y>
+                        <width>511</width>
+                        <height>150</height>
+                    </rect>
+                </property>
+                <property name="title">
+                    <string>Command Request</string>
+                </property>
+                <widget class="QLabel">
+                    <property name="name">
+                        <cstring>textLabel2_5</cstring>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>10</x>
+                            <y>60</y>
+                            <width>71</width>
+                            <height>21</height>
+                        </rect>
+                    </property>
+                    <property name="text">
+                        <string>Data</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>pushButton_VCRequest</cstring>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>10</x>
+                            <y>110</y>
+                            <width>110</width>
+                            <height>30</height>
+                        </rect>
+                    </property>
+                    <property name="text">
+                        <string>Execute</string>
+                    </property>
+                </widget>
+                <widget class="QTextEdit">
+                    <property name="name">
+                        <cstring>textEdit_VCRequest_Data</cstring>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>90</x>
+                            <y>60</y>
+                            <width>410</width>
+                            <height>30</height>
+                        </rect>
+                    </property>
+                </widget>
+                <widget class="QLabel">
+                    <property name="name">
+                        <cstring>textLabel1</cstring>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>10</x>
+                            <y>20</y>
+                            <width>56</width>
+                            <height>21</height>
+                        </rect>
+                    </property>
+                    <property name="text">
+                        <string>Comand</string>
+                    </property>
+                </widget>
+                <widget class="QTextEdit">
+                    <property name="name">
+                        <cstring>textEdit_VCRequest_Command</cstring>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>90</x>
+                            <y>20</y>
+                            <width>50</width>
+                            <height>30</height>
+                        </rect>
+                    </property>
+                    <property name="textFormat">
+                        <enum>PlainText</enum>
+                    </property>
+                </widget>
+                <widget class="QLabel">
+                    <property name="name">
+                        <cstring>textLabel1_2</cstring>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>150</x>
+                            <y>20</y>
+                            <width>56</width>
+                            <height>21</height>
+                        </rect>
+                    </property>
+                    <property name="text">
+                        <string>hex</string>
+                    </property>
+                </widget>
+            </widget>
+            <widget class="QGroupBox">
+                <property name="name">
+                    <cstring>groupBox15</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>10</x>
+                        <y>160</y>
+                        <width>511</width>
+                        <height>120</height>
+                    </rect>
+                </property>
+                <property name="title">
+                    <string>Command Response</string>
+                </property>
+                <widget class="QLabel">
+                    <property name="name">
+                        <cstring>textLabel3_2_2</cstring>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>10</x>
+                            <y>60</y>
+                            <width>67</width>
+                            <height>21</height>
+                        </rect>
+                    </property>
+                    <property name="text">
+                        <string>Status</string>
+                    </property>
+                </widget>
+                <widget class="QLabel">
+                    <property name="name">
+                        <cstring>textLabel3_2_2_2</cstring>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>10</x>
+                            <y>90</y>
+                            <width>67</width>
+                            <height>21</height>
+                        </rect>
+                    </property>
+                    <property name="text">
+                        <string>Data</string>
+                    </property>
+                </widget>
+                <widget class="QLabel">
+                    <property name="name">
+                        <cstring>textLabel_VCResponse_Data</cstring>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>90</x>
+                            <y>90</y>
+                            <width>410</width>
+                            <height>21</height>
+                        </rect>
+                    </property>
+                    <property name="frameShape">
+                        <enum>Box</enum>
+                    </property>
+                    <property name="frameShadow">
+                        <enum>Sunken</enum>
+                    </property>
+                    <property name="text">
+                        <string>dynamic</string>
+                    </property>
+                </widget>
+                <widget class="QLabel">
+                    <property name="name">
+                        <cstring>textLabel_VCResponse_Status</cstring>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>90</x>
+                            <y>60</y>
+                            <width>410</width>
+                            <height>21</height>
+                        </rect>
+                    </property>
+                    <property name="frameShape">
+                        <enum>Box</enum>
+                    </property>
+                    <property name="frameShadow">
+                        <enum>Sunken</enum>
+                    </property>
+                    <property name="text">
+                        <string>dynamic</string>
+                    </property>
+                </widget>
+                <widget class="QLabel">
+                    <property name="name">
+                        <cstring>textLabel1_2_2</cstring>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>150</x>
+                            <y>30</y>
+                            <width>56</width>
+                            <height>21</height>
+                        </rect>
+                    </property>
+                    <property name="text">
+                        <string>hex</string>
+                    </property>
+                </widget>
+                <widget class="QLabel">
+                    <property name="name">
+                        <cstring>textLabel3_2</cstring>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>10</x>
+                            <y>30</y>
+                            <width>67</width>
+                            <height>21</height>
+                        </rect>
+                    </property>
+                    <property name="text">
+                        <string>Command</string>
+                    </property>
+                </widget>
+                <widget class="QLabel">
+                    <property name="name">
+                        <cstring>textLabel_VCResponse_Command</cstring>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>90</x>
+                            <y>30</y>
+                            <width>50</width>
+                            <height>21</height>
+                        </rect>
+                    </property>
+                    <property name="frameShape">
+                        <enum>Box</enum>
+                    </property>
+                    <property name="frameShadow">
+                        <enum>Sunken</enum>
+                    </property>
+                    <property name="text">
+                        <string>dynamic</string>
+                    </property>
+                </widget>
+            </widget>
+        </widget>
+    </widget>
+</widget>
+<connections>
+    <connection>
+        <sender>pushButton_WritePort</sender>
+        <signal>clicked()</signal>
+        <receiver>StarIOTest</receiver>
+        <slot>pushButton_WritePort_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>pushButton_GetStatus</sender>
+        <signal>clicked()</signal>
+        <receiver>StarIOTest</receiver>
+        <slot>pushButton_GetStatus_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>pushButton_HdwrReset</sender>
+        <signal>clicked()</signal>
+        <receiver>StarIOTest</receiver>
+        <slot>pushButton_HdwrReset_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>pushButton_VCRequest</sender>
+        <signal>clicked()</signal>
+        <receiver>StarIOTest</receiver>
+        <slot>pushButton_VCRequest_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>pushButton_OpenPort</sender>
+        <signal>clicked()</signal>
+        <receiver>StarIOTest</receiver>
+        <slot>pushButton_OpenPort_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>pushButton_PrintImage</sender>
+        <signal>clicked()</signal>
+        <receiver>StarIOTest</receiver>
+        <slot>pushButton_PrintImage_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>pushButton_BrowseImageFile</sender>
+        <signal>clicked()</signal>
+        <receiver>StarIOTest</receiver>
+        <slot>pushButton_BrowseImageFile_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>pushButton_ReadROMVer</sender>
+        <signal>clicked()</signal>
+        <receiver>StarIOTest</receiver>
+        <slot>pushButton_ReadROMVer_clicked()</slot>
+    </connection>
+</connections>
+<includes>
+    <include location="local" impldecl="in implementation">stariotest.ui.h</include>
+</includes>
+<slots>
+    <slot>pushButton_WritePort_clicked()</slot>
+    <slot>pushButton_GetStatus_clicked()</slot>
+    <slot>pushButton_HdwrReset_clicked()</slot>
+    <slot>pushButton_VCRequest_clicked()</slot>
+    <slot>pushButton_OpenPort_clicked()</slot>
+    <slot>pushButton_PrintImage_clicked()</slot>
+    <slot>pushButton_BrowseImageFile_clicked()</slot>
+    <slot>pushButton_ReadROMVer_clicked()</slot>
+</slots>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

@@ -1,0 +1,60 @@
+#!/bin/bash
+
+echo -e "Star Micronics"
+echo -e "libstario installer"
+echo -e "-------------------"
+echo -e ""
+echo -e "installation structure:"
+echo -e "\t/usr/lib/libstario.so.0.0.5107"
+echo -e "\t/usr/lib/libstario.so.0 (symbolic link)"
+echo -e "\t/usr/lib/libstario.so (symbolic link)"
+echo -e "\t/usr/include/stario/"
+echo -e "\t/usr/include/stario/stario.h"
+echo -e "\t/usr/include/stario/stario-structures.h"
+echo -e "\t/usr/include/stario/stario-error.h"
+echo -e "\t/usr/include/stario/example/"
+echo -e "\t/usr/include/stario/example/teststario"
+echo -e "\t/usr/include/stario/example/teststario.c"
+echo -e ""
+echo -e "usage:"
+echo -e "\t1. Execute /usr/include/stario/example/teststario,"
+echo -e "\t   read its usage statement, and run it again"
+echo -e "\t2. Study /usr/include/stario/example/teststario.c"
+echo -e "\t   and /usr/include/stario/stario.h"
+echo -e "\t3. Create your own software using libstario"
+echo -e "\t4. IMPORTANT:"
+echo -e "\t   Buy & Deploy more Star Printers and Visual Cards :)"
+echo -e ""
+echo -e "support contact:"
+echo -e "\talbert kennis - albert@star-m.jp"
+echo -e ""
+echo -e "now installing..."
+
+if [ -z $DESTDIR ] && [ "$UID" -ne "0" ]; then echo "Must be root user to install"; exit 1; fi
+
+echo -e "\tcreating $DESTDIR/usr/include/stario/ directory"
+mkdir -p $DESTDIR/usr/include/stario
+
+echo -e "\tcopying header files"
+cp -f src/stario.h $DESTDIR/usr/include/stario
+cp -f src/stario-structures.h $DESTDIR/usr/include/stario
+cp -f src/stario-error.h $DESTDIR/usr/include/stario
+
+echo -e "\tcreating $DESTDIR/usr/include/stario/example/ directory"
+mkdir -p $DESTDIR/usr/include/stario/example
+
+echo -e "\tcopying example binary and source files"
+cp -f bin/teststario $DESTDIR/usr/include/stario/example
+cp -f src/teststario.c $DESTDIR/usr/include/stario/example
+
+mkdir -p $DESTDIR/usr/lib
+
+echo -e "\tcopying libstario.so, registering (ldconfig) & making links"
+cp -f bin/libstario.so.0.0.5107 $DESTDIR/usr/lib
+ldconfig
+ln -sf $DESTDIR/usr/lib/libstario.so.0 $DESTDIR/usr/lib/libstario.so
+
+echo ""
+echo "installation completed successfully :)"
+echo ""
+

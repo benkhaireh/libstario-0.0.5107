@@ -1,0 +1,170 @@
+libstario
+---------
+
+***********
+Explination
+***********
+
+This is the libstario package, providing the libstario.so component and related development headers.
+
+The libstario.so provides the following functionality:
+
+* Binary input and output communications channels to Star printer and Visual Card devices over serial, parallel, or USB ports
+* Status reading from Star printers in a parsed & easy to use format
+* Block checked output to Star printers giving the client application the ability to detect printing completion and/or error.
+* Hardware reset of Star printers allowing client applications to recover the device back to a know state
+* Command transaction execution for Star Visual Card devices allowing client applications to execute Visual Card commands including both tx and rx data.
+
+**********************************
+Package usage via makefile targets
+**********************************
+
+This project is built and installed using the included makefile.  The following is an explination of the various targets contained in this makefile and what they do:
+
+cmd & target: 'make'
+--------------------
+Build all project sources and create a new libstario.so component version.
+
+cmd & target: 'make clean'
+--------------------------
+Clean the project and return it to the initial configuration.
+
+cmd & target: 'make install'
+----------------------------
+Installs the compiled libstario.so component and related header files.  The libstario.so component is installed (by default) into the /usr/lib directory.  The header files prototyping this component's API are installed (by default) into the /usr/include/stario directory.
+
+Note, this target requires root user permissions to execute.
+
+cmd & target: 'make remove'
+---------------------------
+Removes any previously installed libstario.so component and related header files.
+
+Note, this target requires root user permissions to execute.
+
+cmd & target: 'make help'
+-------------------------
+Prints a summary of the various targets contained in this makefile.
+
+******************************************
+Device & client application configuration
+******************************************
+
+When using libstario, please configure your device and client applications as such:
+
+usb printer or Visual Card
+--------------------------
+Turn DIP switches 1-5 and 1-8 OFF (under panel on bottom of device, see printer user manual for details).
+
+Applications should pass a string of the following form in the portName parameter to the openPort API:
+
+usb:TSP700;sn:12345678
+|   |     |   |
+|   |     |   |
+|   |     |   |--> usb serial number
+|   |     |
+|   |     |------> beginning of usb serial number sub-string - optional
+|   |
+|   |------------> Device ID (one of SP512, SP542, TSP613, TSP600, TSP700
+|                                    TSP800, TUP900, TUP992, TCP300)
+|
+|----------------> beginning of usb portName string
+
+Note, libstario effects usb communications via the libusb architecture; make sure that this is installed.  In addition, Linux allows only the root user to access usb device by default - execute your application under the root account or give user-level access to the device by customizing the hot-plug configuration.
+
+serial printer or Visual Card
+-----------------------------
+Turn serial interface card DIP switches 1-7 and 1-8 ON (remove interface card from back of printer, see printer user manual for details).
+
+Applications should pass a string of the following form in the portName parameter to the openPort API:
+
+/dev/ttyS0
+|        |
+|        |
+|        |--> serial port number (0, 1, ... n)
+|
+|-----------> beginning of serial portName string
+
+The portSettings parameter is also required in the following form:
+
+38400,none,8,1,hdwr
+|     |    | | |
+|     |    | | |
+|     |    | | |--> flow control (one of hdwr, none)
+|     |    | |
+|     |    | |----> stop bits (fixed at 1)
+|     |    |
+|     |    |------> data bits (one of 8, 7)
+|     |
+|     |-----------> parity (one of none, even, odd)
+|
+|-----------------> baud rate (one of 38400, 19200, 9600, 4800)
+
+parallel printer
+----------------
+Turn DIP switch 1-8 OFF (under panel on bottom of device, see printer user manual for details).
+
+Applications should pass a string of the following form in the portName parameter to the openPort API:
+
+/dev/parport0
+|           |
+|           |
+|           |--> parallel port number (0, 1, ... n)
+|
+|-----------> beginning of parallel portName string
+
+Note, libstario effects parallel communications via the PPDEV module.  Many distributions install and load this module by defualt.  If the /dev/parport0 node is not present on your system, please install and configure the PPDEV module.
+
+***********************************
+Sample application stariotest usage
+***********************************
+
+This package includes the a sample client application called stariotest that demonstrates client usage of the libstario component and API.  This sample application is based on QT3, and as such, requires QT3 to be available.
+
+To execute stariotest, enter the stariotest directory and enter the following command: './stariotest'
+
+This will launch the stariotest application.  Use the above application configuration instructions to populate the portName and portSettings fields, then click the 'Open Port' button.  Excercise the API and the device by clicking the various other buttons.
+
+Note, the stariotest application contains functionality not directly exposed by the libstario API.  For example, stariotest support image printing; this is done by generating image printing commands within the stariotest application and then passing those commands to libstario for output to the device.  Please take note of this fact when designing your own application.
+
+Also note that when using stariotest (and libstario in general) with a Star usb device, the application must be run under the root use account (see above for further explination).
+
+******************************
+Client application development
+******************************
+
+The primary purpose of libstario is to facilitate the development of client applications that control Star printer and Visual Card devices.  Here is a minimal set of steps required to use libstario:
+
+1. Add the line, '#include <stario/stario.h' in your source file(s)
+2. Add the '-lstario' compile option to your linker command
+
+The API exposed by libstario is prototyped in the stario.h header file.  Included within this file are explinations of each API function.  Please open this header file and read these explinations while developing your own application.
+
+**********************
+Open Source  - License
+**********************
+
+All source code for the libstario component and the stariotest application are included in this package.  Please feel free to look at and change this source code at your will.  If you make changes that are usefull, and would like to share those changes, send them to albert at star-m.jp.
+
+libstario is licensed under the GNU Lesser General Public License.  This license is included in this package for your reference.
+
+What the LGPL means for you - a totally non-legal(ly binding) explination:
+
+The LGPL allows you to link your applications with libstario and release your application under any license of your choosing (open or closed source).  This is important to you because, you are NOT forced to open source your application as a result of linking with libstario.
+
+***************
+Support contact
+***************
+
+My name is Albert Kennis.  I am a proud employee of Star Micronics - the leading manufacturer of POS printers and card products.  I hope that you find libstario useful.  If you have any problems, questions, or suggestions - please email me at:
+
+albert at star-m.jp
+
+*******
+History
+*******
+
+              Version
+Date          (Major.Minor)     Notes
+----          -------------     -----
+July 16, 2004 0.0               initial public release
+

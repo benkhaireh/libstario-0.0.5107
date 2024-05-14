@@ -1,0 +1,69 @@
+%define name libstario
+
+%define release 1
+
+Name:       %{name}
+Summary:    Star Micronics printer and Visual Card communications library libstario.
+Version:    %{major}.%{minor}.%{compile}
+Release:    %{release}
+Copyright:  LGPL
+Group:      System/Libraries
+Source:     http://www.star-m.jp/service/s_print/bin/%{name}-%{major}.%{minor}.%{compile}.tar.gz
+URL:        http://www.star-m.jp/service/s_print/stario_linux_yyyymmdd.htm
+Vendor:     Star Micronics Co., Ltd.
+Packager:   Albert Kennis <albert@star-m.jp>
+BuildRoot:  %{_tmppath}/%{name}-%{major}.%{minor}.%{compile}-%{release}-buildroot
+
+%description
+The libstario package contains the libstario library and development headers
+facilitating communication with Star Micronics printer and Visual Card products.
+This library makes it very easy to create applications that communicate with
+Star's products, achieving output and input via usb, serial, or parallel ports.
+
+To use libstario, include the following line into your project source,
+'#include <stario/stario.h>'.
+
+You must also link your executable with libstario by adding '-lstario' to the
+compile command.
+
+API documentation is included as comments within the /usr/include/stario/stario.h
+file.
+
+%prep
+%setup
+
+%build
+make RPMBUILD=true
+
+%install
+rm -rf $RPM_BUILD_ROOT
+make RPMBUILD=true DESTDIR=$RPM_BUILD_ROOT install
+
+%clean
+rm -rf $RPM_BUILD_ROOT
+
+%post
+ldconfig
+ln -sf /usr/lib/libstario.so.%{major} /usr/lib/libstario.so
+exit 0
+
+%postun
+if [ $1 = 0 ]; then
+    rm -f /usr/lib/libstario.so*
+fi
+ldconfig
+
+%files
+%attr(755, root, root) /usr/lib/libstario.so.%{major}.%{minor}.%{compile}
+%attr(755, root, root) %dir /usr/include/stario/
+%attr(644, root, root) /usr/include/stario/stario.h
+%attr(644, root, root) /usr/include/stario/stario-structures.h
+%attr(644, root, root) /usr/include/stario/stario-error.h
+%attr(755, root, root) %dir /usr/include/stario/example/
+%attr(755, root, root) /usr/include/stario/example/teststario
+%attr(644, root, root) /usr/include/stario/example/teststario.c
+
+%changelog
+* Fri Jul 16 2004 Albert Kennis <albert@star-m.jp>
+- initial release
+
